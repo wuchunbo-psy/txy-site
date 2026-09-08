@@ -1,1 +1,1 @@
-[{"code": ".DJI", "name": "道琼斯", "points": [], "prev_close": null}, {"code": ".IXIC", "name": "纳斯达克", "points": [], "prev_close": null}, {"code": ".INX", "name": "标普500", "points": [], "prev_close": null}]
+[{"code": ".DJI", "name": "道琼斯", "points": [{"time": "1633", "price": 53414.25}], "prev_close": null}, {"code": ".IXIC", "name": "纳斯达克", "points": [{"time": "1715", "price": 26506.99}], "prev_close": null}, {"code": ".INX", "name": "标普500", "points": [{"time": "1633", "price": 7718.6}], "prev_close": null}]
