@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <script src="/txy-site/app/shim.js"></script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/txy-site/app/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        const storageKey = 'theme';
+        const root = document.documentElement;
+        const storedTheme = localStorage.getItem(storageKey);
+        const theme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'dark';
+        root.classList.remove('light', 'dark');
+        root.classList.add(theme);
+        root.style.colorScheme = theme;
+      })();
+    </script>
+    <title>投小研 · 仪表盘</title>
+    <script type="module" crossorigin src="/txy-site/app/assets/index-CkgNstoV.js"></script>
+    <link rel="stylesheet" crossorigin href="/txy-site/app/assets/index-DN-PNIEo.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

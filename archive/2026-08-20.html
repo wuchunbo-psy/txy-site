@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b3261e%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2242%22%20font-size%3D%2236%22%20font-weight%3D%22700%22%20fill%3D%22%23fff8ee%22%20text-anchor%3D%22middle%22%20font-family%3D%22serif%22%3E%E6%8A%95%3C%2Ftext%3E%3Crect%20x%3D%2215%22%20y%3D%2250%22%20width%3D%227%22%20height%3D%226%22%20rx%3D%221.5%22%20fill%3D%22%23f6d1c8%22%2F%3E%3Crect%20x%3D%2228.5%22%20y%3D%2247%22%20width%3D%227%22%20height%3D%229%22%20rx%3D%221.5%22%20fill%3D%22%23f6d1c8%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2249%22%20width%3D%227%22%20height%3D%227%22%20rx%3D%221.5%22%20fill%3D%22%23f6d1c8%22%2F%3E%3C%2Fsvg%3E">
+<title>投小研每日简报 2026-08-20</title>
+<style>
+:root {
+  --paper:#f6f3ec; --card:#fffdf8; --ink:#221e17; --muted:#8b8272;
+  --line:#e7e0d0; --rule:#c9bfa8;
+  --red:#b3261e; --red-soft:#fbeae8; --red-ink:#8c1d16;
+  --green:#1b7a4a; --green-soft:#e8f3ec;
+  --amber:#b45309; --amber-soft:#fdf3e3;
+  --serif:Georgia,"Times New Roman","Noto Serif SC","Source Han Serif SC","Songti SC",STZhongsong,SimSun,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,monospace;
+}
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans);
+       font-size:15.5px; line-height:1.75;
+       background-image:repeating-linear-gradient(0deg,transparent 0 23px,rgba(60,50,20,.014) 23px 24px); }
+.wrap { max-width:720px; margin:0 auto; padding:0 18px 56px; }
+@media (min-width:1180px) {
+  .wrap { max-width:1000px; padding:0 28px 64px; }
+  /* 桌面双栏：市场温度 + 鱼盆趋势并排，像日报两栏 */
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+  .duo > * { min-width:0; }
+  .duo .quad-grid { grid-template-columns:1fr; }
+}
+
+/* ---------- 报头 ---------- */
+header.mast { padding:26px 0 12px; border-bottom:3px double var(--rule); margin-bottom:6px; }
+.mast-top { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.brand { font-family:var(--serif); font-weight:900; font-size:34px; letter-spacing:.06em;
+          color:var(--ink); text-decoration:none; line-height:1.1; }
+.brand small { display:block; font-size:12.5px; font-weight:400; letter-spacing:.42em;
+                color:var(--red); margin-top:2px; }
+.mast-meta { text-align:right; font-size:12px; color:var(--muted); line-height:1.7; }
+.mast-meta b { font-family:var(--serif); font-size:15px; color:var(--ink); font-weight:700;
+                letter-spacing:.05em; display:block; }
+.hactions { display:flex; gap:8px; align-items:center; width:100%; margin-top:12px; }
+.dash { display:inline-flex; align-items:center; gap:6px; text-decoration:none;
+         white-space:nowrap; background:var(--card); color:var(--ink);
+         border:1px solid var(--rule); padding:6px 12px; font-size:13.5px; letter-spacing:.08em; }
+.dash-ic { width:15px; height:15px; color:var(--red-ink); }
+.dash:hover { border-color:var(--red); color:var(--red-ink); }
+select { flex:1; min-width:0; background:var(--card); color:var(--ink); border:1px solid var(--rule);
+          border-radius:0; padding:7px 8px; font-size:13.5px; font-family:var(--sans); }
+
+/* ---------- 今日决策 hero ---------- */
+section.decision { margin:20px 0 6px; padding:18px 18px 14px; background:var(--card);
+                    border:1px solid var(--line); border-top:3px solid var(--red);
+                    box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(90,60,20,.25); }
+.decision-row { display:flex; gap:16px; align-items:center; }
+.seal { flex:0 0 auto; width:64px; height:64px; display:flex; align-items:center; justify-content:center;
+         border:2.5px solid var(--red); color:var(--red); font-family:var(--serif); font-weight:900;
+         font-size:26px; letter-spacing:.02em; transform:rotate(-4deg); border-radius:4px;
+         position:relative; }
+.seal::after { content:""; position:absolute; inset:3px; border:1px solid var(--red); border-radius:2px; opacity:.55; }
+.d-kicker { font-size:11.5px; letter-spacing:.34em; color:var(--muted); margin-bottom:3px; }
+.d-head { font-family:var(--serif); font-weight:700; font-size:21px; line-height:1.35; }
+.d-head em { font-style:normal; color:var(--red-ink); }
+.decision p { margin:10px 0 0; font-size:13.5px; color:var(--muted); border-top:1px dashed var(--line);
+               padding-top:9px; }
+.decision p strong { color:var(--ink); letter-spacing:.15em; }
+.decision blockquote { margin:9px 0 0; font-size:12.5px; color:var(--amber); background:var(--amber-soft);
+                        border:none; border-left:3px solid var(--amber); padding:6px 10px; }
+
+/* ---------- 温度计 ---------- */
+.temp { margin:16px 0 4px; padding:13px 16px 14px; background:var(--card); border:1px solid var(--line); }
+.temp-head { display:flex; align-items:baseline; gap:10px; margin-bottom:9px; }
+.temp-title { font-family:var(--serif); font-weight:700; font-size:16px; letter-spacing:.05em; }
+.temp-val { font-family:var(--mono); font-size:22px; font-weight:700; margin-left:auto; }
+.temp-val small { font-size:12px; color:var(--muted); font-weight:400; }
+.temp-band { font-size:12.5px; padding:2px 9px; border:1px solid currentColor; letter-spacing:.2em; }
+.temp-track { height:9px; background:linear-gradient(90deg,#2f8f6b,#caa128 45%,#c0392b);
+               position:relative; }
+.temp-track::after { content:""; position:absolute; inset:0;
+                      background:var(--paper); opacity:.82; margin-left:var(--w,0%);
+                      transition:margin .6s ease; }
+.temp-sub { margin-top:8px; font-size:12.5px; color:var(--muted); line-height:1.8; }
+
+/* ---------- 温度计副指标：维度网格 / 轮动分化行 / 定调 / 置信度 ---------- */
+.dims { display:grid; grid-template-columns:repeat(4,1fr); gap:5px 10px; margin-top:12px; }
+.dim { display:flex; align-items:baseline; justify-content:space-between; gap:6px;
+        background:rgba(60,50,20,.045); border:1px solid var(--line); padding:4px 8px;
+        font-size:11.5px; line-height:1.4; }
+.dim-name { color:var(--muted); letter-spacing:.03em; }
+.dim-val { font-family:var(--mono); font-weight:700; color:var(--ink); }
+.mkts { margin-top:9px; display:flex; flex-direction:column; gap:5px; }
+.mktline { display:flex; gap:8px; align-items:baseline; font-size:12.5px; line-height:1.6;
+            background:var(--card); border:1px solid var(--line); padding:5px 9px; }
+.mktline b { flex:0 0 auto; color:var(--ink); font-weight:700; letter-spacing:.12em; }
+.verdict { margin-top:10px; padding:8px 11px; background:var(--card); border:1px dashed var(--rule);
+            font-size:13px; line-height:1.7; }
+.confidence { margin-top:8px; font-size:12px; color:var(--muted); }
+.confidence::before { content:"●"; color:#9a8f7d; margin-right:5px; font-size:9px;
+                       vertical-align:1px; }
+
+/* ---------- 信息分块卡（市场温度 / 鱼盆） ---------- */
+.quad-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 4px; }
+.qcard { background:var(--card); border:1px solid var(--line); padding:10px 12px;
+          min-width:0; }
+.qcard .ql { display:block; font-size:11px; color:var(--muted); letter-spacing:.28em;
+              margin-bottom:5px; }
+.qcard .qb { font-size:13.5px; line-height:1.65; }
+.qcard.warn { grid-column:1 / -1; border-left:3px solid var(--amber); background:var(--amber-soft);
+               border-top-color:var(--line); border-bottom-color:var(--line); border-right-color:var(--line);
+               color:#7a4a08; font-size:13px; }
+.qcard.adv { border-left:3px solid var(--rule); color:var(--ink); }
+.qcard.adv .ql { color:var(--muted); }
+.qchips { display:flex; flex-wrap:wrap; gap:4px 6px; }
+.qchip { font-size:12px; padding:2px 7px; background:rgba(60,50,20,.05);
+          border:1px solid var(--line); white-space:nowrap; }
+.qchip b { margin-left:4px; font-family:var(--mono); color:var(--red-ink); }
+.qchip b.down { color:var(--green); }
+.fb-dim { margin:18px 0 6px; }
+.fb-dim + .fb-dim { margin-top:26px; border-top:1px dashed var(--line); padding-top:18px; }
+.fb-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+           padding-bottom:9px; border-bottom:1px solid var(--rule); }
+.fb-title { font-family:var(--serif); font-weight:700; font-size:16.5px; letter-spacing:.04em; }
+.fb-stats { font-size:12.5px; color:var(--muted); white-space:nowrap; }
+.fb-stats b { font-family:var(--serif); font-size:19px; font-weight:900; margin:0 4px 0 10px;
+               vertical-align:-1px; }
+.fb-stats b.on { color:var(--red-ink); }
+.fb-stats b.off { color:var(--green); }
+.fb-stats b:first-child { margin-left:0; }
+.fb-stats i { display:inline-block; width:1px; height:12px; background:var(--rule);
+               margin:0 2px; vertical-align:-1px; }
+.ships { display:flex; gap:10px; margin:12px 0; }
+.ship { flex:1; background:var(--card); border:1px solid var(--line); padding:9px 12px;
+         text-align:center; }
+.ship .n { display:block; font-family:var(--serif); font-size:26px; font-weight:900;
+            line-height:1.1; }
+.ship .l { font-size:11px; color:var(--muted); letter-spacing:.3em; margin-top:3px; }
+.ship.on .n { color:var(--red-ink); }
+.ship.off .n { color:var(--green); }
+.panels { display:flex; flex-direction:column; gap:9px; margin:4px 0 4px; }
+.panel { padding:9px 12px; border:1px solid var(--line); background:var(--card); }
+.panel p { margin:0; display:flex; flex-wrap:wrap; gap:4px 6px; align-items:baseline; }
+.panel .pl { flex:0 0 auto; font-weight:700; font-size:12.5px; letter-spacing:.2em; }
+.panel.g { border-left:3px solid var(--red); }
+.panel.g .pl { color:var(--red-ink); }
+.panel.r { border-left:3px solid var(--green); }
+.panel.r .pl { color:var(--green); }
+.pchip { font-size:12px; padding:2px 8px; border:1px solid var(--line); white-space:nowrap; }
+.panel.g .pchip { background:var(--red-soft); border-color:#e3c2be; color:var(--red-ink); }
+.panel.r .pchip { background:var(--green-soft); border-color:#c4dccb; color:#2c5e42; }
+.sec-sub { display:block; font-size:12.5px; color:var(--muted); font-weight:400;
+            letter-spacing:.05em; margin-top:2px; }
+
+/* ---------- 信号雷达统计条 ---------- */
+.scanstats { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:10px 0 2px; }
+.sstat { font-size:12px; padding:3px 9px; border:1px solid var(--line); background:var(--card); }
+.sstat b { font-family:var(--mono); font-size:13.5px; margin:0 2px; }
+.sstat.opp { border-color:#d9a7a2; background:var(--red-soft); color:var(--red-ink); }
+.sstat.risk { border-color:#a8cbb8; background:var(--green-soft); color:#2c5e42; }
+.sstat.full { color:var(--muted); border-color:var(--rule); }
+
+/* ---------- 雷达分区：机会在前、风险在后，全宽+评级带分层 ---------- */
+.radar-sect { margin:4px 0 40px; }
+.radar-sect:last-child { margin-bottom:8px; }
+.radar-sect .tblwrap { margin:14px 0 30px; }
+.radar-sect h3 { font-size:15px; margin:22px 0 10px; }
+.radar-sect h3:first-of-type { margin-top:12px; }
+.rc-title { display:flex; align-items:baseline; gap:9px;
+             font-family:var(--serif); font-weight:700; font-size:15.5px; letter-spacing:.08em;
+             padding:8px 0 9px; border-bottom:2px solid; }
+.rc-title em { font-style:normal; font-size:11.5px; color:var(--muted); letter-spacing:.2em; }
+.rc-title .dot { width:9px; height:9px; border-radius:50%; align-self:center; }
+.radar-col.opps .rc-title { color:var(--red-ink); border-color:#d9a7a2; }
+.radar-col.opps .dot { background:#d9a7a2; }
+.radar-col.risks .rc-title { color:var(--green); border-color:#a8cbb8; }
+.radar-col.risks .dot { background:#a8cbb8; }
+
+
+@media (max-width:600px) {
+  .dims { grid-template-columns:repeat(2,1fr); }
+  .quad-grid { grid-template-columns:1fr; }
+  .qcard.warn { grid-column:auto; }
+}
+
+/* ---------- 正文 ---------- */
+main { display:block; }
+article { padding:4px 0 0; }
+article h2 { font-family:var(--serif); font-size:18.5px; font-weight:700; letter-spacing:.03em;
+              margin:30px 0 10px; padding-top:16px; border-top:1px solid var(--rule);
+              display:flex; align-items:baseline; gap:9px; }
+article h2:first-of-type { border-top:none; padding-top:6px; }
+article h2::before { content:"■"; color:var(--red); font-size:10px; transform:translateY(-2px); }
+article h3 { font-family:var(--serif); font-size:15.5px; font-weight:700; margin:20px 0 8px;
+              letter-spacing:.04em; }
+article h3::after { content:""; display:block; width:34px; height:2px; background:var(--red);
+                     margin-top:4px; opacity:.75; }
+article p { margin:7px 0; }
+article ul { padding-left:0; margin:7px 0; list-style:none; }
+article li { margin:6px 0; padding-left:16px; position:relative; }
+article li::before { content:"—"; position:absolute; left:0; color:var(--rule); }
+article strong { color:var(--red-ink); }
+article blockquote { margin:10px 0; padding:7px 12px; background:var(--card);
+                     border-left:3px solid var(--rule); color:var(--muted); font-size:13px;
+                     line-height:1.8; }
+article hr { border:none; text-align:center; margin:22px 0; height:auto; }
+article hr::after { content:"◆ ◆ ◆"; color:var(--rule); font-size:9px; letter-spacing:1em; }
+article code { background:var(--card); border:1px solid var(--line); padding:1px 5px;
+                font-family:var(--mono); font-size:.88em; }
+article em { color:var(--muted); }
+
+/* ---------- 信号表（宽屏） ---------- */
+.tblwrap { margin:12px 0 18px; overflow-x:auto; }
+table.sig { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line);
+             font-size:13px; line-height:1.55; }
+/* 列几何全站统一（2026-09-19 用户反馈：趋势票/收息票表格列宽各漂各的）。
+   fixed 布局下宽度取自表头单元格，机会表(6列)与风险表(5列)共列对齐。 */
+table.sig { table-layout:fixed; }
+table.sig thead th:nth-child(1) { width:64px; }   /* 评级 */
+table.sig thead th:nth-child(4) { width:60px; }   /* 位置 */
+table.sig thead th:nth-child(2) { width:178px; }  /* 票 */
+table.t-risk thead th:nth-child(5) { width:236px; }  /* 动作 */
+table.t-opp thead th:nth-child(5) { width:84px; }    /* 板块 */
+table.t-opp thead th:nth-child(6) { width:210px; }   /* 动作 */
+@media (max-width:1179px) {
+  .chip { white-space:normal; }
+}
+table.sig thead th { font-family:var(--serif); font-weight:700; font-size:12.5px; letter-spacing:.12em;
+                      color:var(--muted); text-align:left; padding:8px 10px;
+                      border-bottom:2px solid var(--rule); white-space:nowrap; }
+table.sig tbody td { padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+table.sig tbody tr:nth-child(even) { background:rgba(60,50,20,.025); }
+table.sig tbody tr:last-child td { border-bottom:none; }
+table.sig td.c-signals, table.sig td.c-track { max-width:230px; }
+table.sig td.c-action { min-width:150px; }
+table.t-risk td.c-action { color:var(--green); font-weight:600; }
+table.t-opp td.c-action { color:var(--red-ink); }
+
+.rt { display:inline-block; min-width:30px; text-align:center; font-family:var(--mono);
+       font-weight:700; font-size:12px; padding:1.5px 6px; border:1px solid; }
+.rt-a,.rt-b { color:var(--red); border-color:var(--red); background:var(--red-soft); }
+.rt-c { color:var(--muted); border-color:var(--rule); }
+.rt-r { color:var(--green); border-color:var(--green); background:var(--green-soft); }
+
+/* ---------- 评级带：同一信号表内按 A/B/C · R1/R2/R3 分层 ---------- */
+.rband td { padding:2px 10px !important; border-bottom:none !important; background:transparent !important; }
+.rb-tag { display:inline-block; font-size:11.5px; letter-spacing:.3em; padding:2.5px 10px;
+           color:#fff; font-weight:700; }
+.rb-a .rb-tag { background:#8c1d16; }
+.rb-b .rb-tag { background:#b3261e; }
+.rb-c .rb-tag { background:#9a8f7d; }
+.rb-r1 .rb-tag { background:#1b7a4a; }
+.rb-r2 .rb-tag { background:#2c9a62; }
+.rb-r3 .rb-tag { background:#9a8f7d; }
+.rb-other .rb-tag { background:#9a8f7d; }
+.rb-note { margin-left:10px; font-size:11px; color:var(--muted); letter-spacing:.18em; }
+table.sig tbody tr { background:transparent; }
+table.sig tbody tr:not(.rband) { background:var(--card); }
+table.sig tbody tr:not(.rband) td { border-bottom:1px solid var(--line); }
+table.sig tbody tr:not(.rband) + tr:not(.rband) td { border-top:1px dashed var(--line); border-bottom:none; }
+table.sig tbody tr:not(.rband):last-child td { border-bottom:1px solid var(--line); }
+
+.sname { font-weight:700; letter-spacing:.02em; }
+.scode { font-family:var(--mono); font-size:11px; color:var(--muted); margin-left:5px; }
+
+.pos { display:inline-block; font-size:11.5px; padding:1px 7px; border:1px solid var(--rule);
+        color:var(--muted); letter-spacing:.1em; white-space:nowrap; }
+.pos-high { color:var(--green); border-color:#a8cbb8; background:var(--green-soft); }
+.pos-low { color:var(--red-ink); border-color:#d9a7a2; background:var(--red-soft); }
+
+.chip { display:inline-block; font-size:11.5px; padding:1px 7px; margin:1.5px 2px 1.5px 0;
+         background:rgba(60,50,20,.05); border:1px solid var(--line); color:#5c5443;
+         white-space:nowrap; }
+.t-risk .chip { background:var(--green-soft); border-color:#c4dccb; color:#2c5e42; }
+.t-opp .chip { background:var(--red-soft); border-color:#e3c2be; color:var(--red-ink); }
+
+/* ---------- 信号表（窄屏：逐票卡片） ---------- */
+@media (max-width:719px) {
+  .tblwrap { overflow:visible; }
+  table.sig { border:none; background:transparent; }
+  table.sig thead { display:none; }
+  table.sig tbody tr { display:block; background:var(--card); border:1px solid var(--line);
+                        border-left:3px solid var(--rule); margin:0 0 10px; padding:10px 12px 9px; }
+  table.t-opp tbody tr { border-left-color:var(--red); }
+  table.t-risk tbody tr { border-left-color:var(--green); }
+  table.sig tbody td { display:block; border:none; padding:2px 0; }
+  table.sig tbody td::before { content:attr(data-label); display:inline-block; min-width:3.6em;
+                                font-size:11px; color:var(--muted); letter-spacing:.18em;
+                                margin-right:8px; transform:translateY(-1px); }
+  table.sig td.c-rating, table.sig td.c-name { display:flex; align-items:baseline; }
+  table.sig td.c-rating::before, table.sig td.c-name::before { min-width:3.6em; }
+  table.sig td.c-rating { border-bottom:1px dashed var(--line) !important;
+                           margin-bottom:5px; padding-bottom:6px; }
+  table.sig td.c-rating .rt { font-size:12.5px; }
+  table.sig td.c-name { font-size:16px; }
+  table.sig td.c-action { margin-top:4px; font-weight:600; }
+  /* 评级带在卡片模式下是一条横向色带 */
+  table.sig tbody tr.rband { border:none; background:transparent; margin:6px 0 0; padding:6px 0 2px; }
+  table.sig tbody tr.rband td { padding:0 !important; }
+  table.sig tbody tr.rband .rb-tag { letter-spacing:.4em; padding:3px 14px; }
+  table.sig tbody tr.rband .rb-note { margin-left:8px; }
+}
+
+/* ---------- 池变动折叠 ---------- */
+details.churn { margin:12px 0; background:var(--card); border:1px solid var(--line); }
+details.churn summary { cursor:pointer; padding:10px 14px; font-size:13.5px; color:var(--muted);
+                         letter-spacing:.05em; user-select:none; }
+details.churn summary::marker { color:var(--red); }
+details.churn[open] summary { border-bottom:1px dashed var(--line); }
+details.churn ul { padding:8px 16px; }
+details.churn li { font-size:12.5px; color:var(--muted); }
+
+/* ---------- 往期 ---------- */
+.daylist { margin-top:34px; }
+.daylist h2 { font-family:var(--serif); font-size:14px; color:var(--muted); margin:0 0 10px;
+               letter-spacing:.3em; font-weight:700; }
+.daylist ul { list-style:none; padding:0; margin:0;
+               display:grid; grid-template-columns:repeat(auto-fill,minmax(86px,1fr)); gap:7px; }
+.daylist a { display:block; text-align:center; background:var(--card); border:1px solid var(--line);
+             padding:7px 2px; text-decoration:none; color:var(--ink); font-size:12.5px;
+             font-family:var(--mono); transition:border-color .15s; }
+.daylist a:hover { border-color:var(--red); color:var(--red-ink); }
+.daylist a.latest { border-color:var(--red); color:var(--red-ink); font-weight:700;
+                     position:relative; }
+.daylist a.latest::after { content:"新"; position:absolute; top:-6px; right:-5px; background:var(--red);
+                            color:#fff; font-size:9px; padding:0 3.5px; letter-spacing:0;
+                            font-family:var(--sans); }
+
+footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px;
+          padding-top:14px; border-top:1px solid var(--rule); letter-spacing:.06em; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast">
+  <div class="mast-top">
+    <a class="brand" href="/txy-site/">投小研<small>每 日 简 报</small></a>
+    <div class="mast-meta"><b>2026年8月20日 · 周四</b>第 79 期 · 数据仅供个人参考</div>
+  </div>
+  <div class="hactions">
+    <a class="dash" href="/txy-site/app/"><svg class="dash-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="7.2" width="3.4" height="7.3" rx="1" fill="currentColor" opacity=".55"/><rect x="6.3" y="3.6" width="3.4" height="10.9" rx="1" fill="currentColor"/><rect x="11.1" y="5.4" width="3.4" height="9.1" rx="1" fill="currentColor" opacity=".8"/></svg><span>仪表盘</span></a>
+    <select onchange="if(this.value)location.href=this.value" aria-label="选择日期">
+    <option value="">📅 往期…</option><option value="archive/2026-09-24.html">2026-09-24</option><option value="archive/2026-09-22.html">2026-09-22</option><option value="archive/2026-09-19.html">2026-09-19</option><option value="archive/2026-09-18.html">2026-09-18</option><option value="archive/2026-09-17.html">2026-09-17</option><option value="archive/2026-09-16.html">2026-09-16</option><option value="archive/2026-09-15.html">2026-09-15</option><option value="archive/2026-09-14.html">2026-09-14</option><option value="archive/2026-09-13.html">2026-09-13</option><option value="archive/2026-09-11.html">2026-09-11</option><option value="archive/2026-09-10.html">2026-09-10</option><option value="archive/2026-09-09.html">2026-09-09</option><option value="archive/2026-09-08.html">2026-09-08</option><option value="archive/2026-09-07.html">2026-09-07</option><option value="archive/2026-09-06.html">2026-09-06</option><option value="archive/2026-09-04.html">2026-09-04</option><option value="archive/2026-09-03.html">2026-09-03</option><option value="archive/2026-09-02.html">2026-09-02</option><option value="archive/2026-09-01.html">2026-09-01</option><option value="archive/2026-08-31.html">2026-08-31</option><option value="archive/2026-08-30.html">2026-08-30</option><option value="archive/2026-08-29.html">2026-08-29</option><option value="archive/2026-08-28.html">2026-08-28</option><option value="archive/2026-08-26.html">2026-08-26</option><option value="archive/2026-08-25.html">2026-08-25</option><option value="archive/2026-08-24.html">2026-08-24</option><option value="archive/2026-08-23.html">2026-08-23</option><option value="archive/2026-08-22.html">2026-08-22</option><option value="archive/2026-08-21.html">2026-08-21</option><option value="archive/2026-08-20.html" selected>2026-08-20</option><option value="archive/2026-08-19.html">2026-08-19</option><option value="archive/2026-08-18.html">2026-08-18</option><option value="archive/2026-08-17.html">2026-08-17</option><option value="archive/2026-08-16.html">2026-08-16</option><option value="archive/2026-08-15.html">2026-08-15</option><option value="archive/2026-08-13.html">2026-08-13</option><option value="archive/2026-08-12.html">2026-08-12</option><option value="archive/2026-08-11.html">2026-08-11</option><option value="archive/2026-08-10.html">2026-08-10</option><option value="archive/2026-08-09.html">2026-08-09</option><option value="archive/2026-08-07.html">2026-08-07</option><option value="archive/2026-08-06.html">2026-08-06</option><option value="archive/2026-08-05.html">2026-08-05</option><option value="archive/2026-08-03.html">2026-08-03</option><option value="archive/2026-08-02.html">2026-08-02</option><option value="archive/2026-07-31.html">2026-07-31</option><option value="archive/2026-07-30.html">2026-07-30</option><option value="archive/2026-07-29.html">2026-07-29</option><option value="archive/2026-07-28.html">2026-07-28</option><option value="archive/2026-07-27.html">2026-07-27</option><option value="archive/2026-07-26.html">2026-07-26</option><option value="archive/2026-07-25.html">2026-07-25</option><option value="archive/2026-07-23.html">2026-07-23</option><option value="archive/2026-07-22.html">2026-07-22</option><option value="archive/2026-07-21.html">2026-07-21</option><option value="archive/2026-07-20.html">2026-07-20</option><option value="archive/2026-07-19.html">2026-07-19</option><option value="archive/2026-07-18.html">2026-07-18</option><option value="archive/2026-07-17.html">2026-07-17</option><option value="archive/2026-07-16.html">2026-07-16</option><option value="archive/2026-07-15.html">2026-07-15</option><option value="archive/2026-07-14.html">2026-07-14</option><option value="archive/2026-07-13.html">2026-07-13</option><option value="archive/2026-07-12.html">2026-07-12</option><option value="archive/2026-07-11.html">2026-07-11</option><option value="archive/2026-07-10.html">2026-07-10</option><option value="archive/2026-07-09.html">2026-07-09</option><option value="archive/2026-07-08.html">2026-07-08</option><option value="archive/2026-07-07.html">2026-07-07</option><option value="archive/2026-07-06.html">2026-07-06</option><option value="archive/2026-07-05.html">2026-07-05</option><option value="archive/2026-07-04.html">2026-07-04</option><option value="archive/2026-07-02.html">2026-07-02</option><option value="archive/2026-06-29.html">2026-06-29</option><option value="archive/2026-06-28.html">2026-06-28</option><option value="archive/2026-06-27.html">2026-06-27</option><option value="archive/2026-06-23.html">2026-06-23</option><option value="archive/2026-06-22.html">2026-06-22</option><option value="archive/2026-06-19.html">2026-06-19</option>
+    </select>
+  </div>
+</header>
+<main>
+<article><h1>📈 投小研每日简报 2026-08-20</h1>
+
+<section class="decision"><div class="decision-row"><div class="seal">正常</div><div><div class="d-kicker">今 日 决 策</div><div class="d-head"><em>正常</em> — 市场中性偏强，可正常看个股</div></div></div><p><strong>依据</strong>：普涨明显（上涨3915/下跌1204）、大盘偏强、风险信号(134)多于机会(51)</p><blockquote>
+  <p>⚠️ 数据质量：中（大盘数据为最近快照；扫描数据日期 2026-08-20）</p>
+</blockquote></section>
+
+<section class="duo-item"><h2>市场温度<span class="sec-sub">情绪偏强，活跃</span></h2><div class="quad-grid"><div class="qcard"><span class="ql">大盘</span><div class="qchips"><span class="qchip">上证指数<b class="up">+0.24%</b></span><span class="qchip">深证成指<b class="up">+0.59%</b></span><span class="qchip">创业板指<b class="up">+0.64%</b></span><span class="qchip">科创50<b class="down">-0.87%</b></span></div></div><div class="qcard"><span class="ql">量能</span><div class="qb">2.51万亿（放量4.6%，+1101亿）</div></div><div class="qcard adv"><span class="ql">建议</span><div class="qb">可看前排</div></div></div></section>
+
+<h2>鱼盆趋势</h2>
+
+<ul>
+<li>船上 12 / 掉车 12</li>
+<li>🟢 可关注：微盘股、黄金现货、白银现货、标普500、道琼斯</li>
+<li>🔴 需回避：北证50、科创50、创业板指、中证A500、中证1000</li>
+</ul>
+
+<h2>今日机会（51 只）</h2>
+
+<ul>
+<li><strong>长城汽车(601633)</strong> | 低位（20日低位区）· 今天触发 KDJ金叉、看涨吞没，与“长城汽车（601633.SH）深度报告：无惧低谷苦修内功，自主龙头强者恒强 | 长城汽车深度报告系列之（一）——乘用车篇”这条 thesis 相呼应。 [trend]</li>
+<li><strong>赛力斯(601127)</strong> | 低位（20日低位区）· 今天触发 看涨吞没，与“赛力斯：问界新M7订单量超预期，重点关注华为产业链 [太阳]问界新M7于9月12日正式发布并开启交付，定价25-33万元，订单超预期，无图版城区NCA将迎全国落地。新M7与理想L7对比，在车长、车内有效空间、定价方面都具有较强竞争力。新M7搭载HUAWEI ADS 2.0高阶智能驾驶系统，预计12月将实现全国开启城区智驾领航辅助（城区NCA），实现了不依赖于高精地图的高速、城区高阶智能驾驶。问界M7订单超预期，小订超15000，单日大定2000，智驾版占比较高。当下赛力斯已开启一轮新的周期，M7订单持续火热，后续M9已开启预售并将于Q4正式发布，后续销量有望迈上新台阶。 [太阳]受益于赛力斯新车周期，重点关注华为产业链。整车：赛力斯进入新车周期；零部件：问界相关：拓普集团、星宇股份、模塑科技、华阳集团、银轮股份、上海沿浦、文灿股份、上声电子等，华为奇瑞产业链：星宇股份，立讯精密，瑞鹄模具。重点关注：拓普集团、星宇股份、模塑科技。未来随问界车型放量及华为国内合作进展推进，相关产业链标的有望表现较大收入弹性。”这条 thesis 相呼应。 [trend]</li>
+<li><strong>中国卫通(601698)</strong> | 低位（20日低位区）· 今天触发 OBV底背离，与“商业航天龙头、卫星总装运营”这条 thesis 相呼应。 [trend]</li>
+<li><strong>百亚股份(003006)</strong> | 低位（20日低位区）· 今天触发 KDJ金叉，与“‼百亚股份&amp;泡泡玛特更新 #百亚股份 线上持续爆发，赋能线下扩张提速 5月线上抖音+287%，排名延续第1名。天猫平台+82%。预估5月百亚线上整体仍有150%+增速。线上“抖音驱动，天猫收割”策略持续显效，盈利更优的天猫/拼多多等平台排名持续向上，助力线上规模盈利双升。 520上市新品益生菌Pro，目前处于线上试销阶段。益生菌Pro进一步优化薄柔和菌群，并升级表层和芯体来重点解决1.0易漏问题。新品定价较老款高20%左右，目标抢夺苏菲&amp;护舒宝高端客群，放量值得期待。 线下4月公司外围省份延续Q1快速成长，5月进一步提速，多数外围省份于5月底已完成Q2整体目标，预期Q2外围省份实现高双位数成长。核心五省4~5月表现稳健，6月经销商为完成Q2目标普遍为进货高峰，预计核心五省6月增速环比更好。 #泡泡玛特 品类突破，IP全球影响力提升，内地境外销售有望超预期 5月内地门店数426家，剔除南京金鹰店后相比23年底约增30家，店效同步提升，5月抖音GMV突破8kw（23Q4月均3kw），主因IP运营优化，品类突破X内容深化显成效，LABUBU新晋顶流IP，毛绒售罄，卡牌积木上新，打开成长空间。…”这条 thesis 相呼应。 [dividend]</li>
+<li><strong>柳工(000528)</strong> | 低位（20日低位区）· 今天触发 KDJ金叉，与“柳工一季报业绩超预期，国内需求有望边际改善，持续关注行业龙头！ 1、柳工一季报业绩超预期，预计同比大增45%~70%；2023年中联重科业绩同比高增52%，安徽合力业绩同比高增41%。 2、挖掘机：3月销售各类挖掘机24980台，同比下降2.3%，其中国内15188台，同比增长9.3%；出口9792台，同比下降16.2%。我们认为工程机械行业相对低迷时期有望逐渐过去，未来有望边际改善。 3、叉车：1-2月共销售叉车178737台，同比增长10.6%；其中国内销量113820台，同比增长5.1%，出口销量64917台，同比增长21.7%。电动化与国际化持续共振，国内需求有望逐步改善。 4、工程机械行业复苏三部曲：更新周期启动、内需改善、出口企稳 5、持续聚焦行业龙头：重点关注来徐工机械（3月、4月金股[福]）、三一重工、中联重科、柳工、恒立液压、杭叉集团、安徽合力、华铁应急；持续关注三一国际、诺力股份、浙江鼎力、中铁工业，关注：山推股份。”这条 thesis 相呼应。 [trend]</li>
+<li><strong>松霖科技(603992)</strong> | 低位（20日低位区）· 今天触发 低位十字星，与“【轻工出口重点公司-24Q4预期更新】 #匠心家居 Q4预期收入+40%，利润在汇兑贡献下+70%以上，越南覆盖对美出口80%+，国内仅保留电机电控和未涉税产品。 #致欧科技 Q4预期收入+25%，利润海运影响下+5%，25Q1长协价价格降低，预期收入稳健增长情况下，利润增长提速，美国收入占比约35%，越南供应链覆盖美国20%左右。 #嘉益股份 Q4预期收入+50%，利润预期+50%，越南产能覆盖美国收入40%，持续扩建中。 #永艺股份 Q4预期收入+30%以上，利润高基数下增速15%左右，扣非利润预期多倍增长，越南产能充足覆盖美国收入。 #欧圣电气 Q4预期收入+50%以上，市占提升+新品类+新市场放量，利润增长更快，预期Q1延续高增，马来产能25年释放可覆盖所有对美敞口，分红比例80% #共创草坪 Q4预期收入+25%左右，利润汇兑贡献预计快于收入，Q1订单稳健预期维持20%左右增长。越南产能充足覆盖美国收入。 #乐歌股份 Q4预期收入+40%以上，利润海运影响延续有所压制，预期Q1在海外仓持续放量拉动下延续高增。越南产能充足覆盖代工与跨境电商业务收入。 #恒林股份 Q4预期收入+…”这条 thesis 相呼应。 [trend]</li>
+<li><strong>明阳智能(601615)</strong> | 低位（20日低位区）· 今天触发 OBV底背离，与“明阳智能与新强联签署重大合同，深度绑定实现“双赢” 1、新强联发布重大合同公告，明阳智能与新强联签署《风力发电机组零部件2023年框架采购合同》，采购金额不低于13.2亿元。 2、从具体的签订内容看，本次轴承合同涵盖了从MySE4.x系列到MySE11/12系列的偏航变桨轴承产品（合计3000套），4.X系列和6.X系类主轴轴承（合计1850套），及海上机型主轴轴承（50套）。本次合同在此前偏航变桨的基础上有两大增量：1）新增海上大兆瓦主轴轴承产品，意味着10MW以上海上主轴轴承正式迈入国产替代阶段；2）新增主轴产品包含双馈主轴轴承产品，产品覆盖面有望进一步拓展。 3、本次合同对明阳和新强联是个双赢的结果：1）对于明阳智能，一方面，本次采购规模对应的风机产量达15GW，奠定明年公司风机快速增长的基础；另一方面，公司主轴轴承的国产化率进一步提升，其大兆瓦海上机型、双馈机型均可通过采用国产化轴承产品，进一步推动风机降本；2）对于新强联，通过和明阳的深度绑定将率先受益于风电轴承国产化率的提升及海风的持续发展。随着大兆瓦海风主轴轴承逐步放量，有望进一步打开增长空间。【长江电新】明阳智能与新强联…”这条 thesis 相呼应。 [trend]</li>
+<li><strong>福能股份(600483)</strong> | 低位（20日低位区）· 今天触发 低位十字星，与“火电地方龙头，股性不错，高股息”这条 thesis 相呼应。 [dividend]</li>
+</ul>
+
+<h2>今日风险（134 只）</h2>
+
+<ul>
+<li><strong>伊利股份(600887)</strong> | 低位（20日低位区）· 今天同时出现机会信号（早晨之星、KDJ金叉、看涨吞没）和风险信号（双顶），先复核结构，不要把看不清当机会。</li>
+<li><strong>宇通客车(600066)</strong> | 低位（20日低位区）· 今天同时出现机会信号（红三兵、KDJ金叉、锤头线）和风险信号（双顶），先复核结构，不要把看不清当机会。</li>
+<li><strong>新华保险(601336)</strong> | 低位（20日低位区）· 今天同时出现机会信号（早晨之星、看涨吞没）和风险信号（头肩顶），先复核结构，不要把看不清当机会。</li>
+<li><strong>昆仑万维(300418)</strong> | 中位（20日中位区）· 今天同时出现机会信号（均线金叉、放量突破）和风险信号（高位十字星），先复核结构，不要把看不清当机会。</li>
+<li><strong>春风动力(603129)</strong> | 中位（20日中位区）· 今天同时出现机会信号（MACD金叉）和风险信号（高位十字星），先复核结构，不要把看不清当机会。</li>
+<li><strong>云铝股份(000807)</strong> | 低位（20日低位区）· 今天同时出现机会信号（OBV底背离）和风险信号（黄昏之星），先复核结构，不要把看不清当机会。</li>
+<li><strong>璞泰来(603659)</strong> | 低位（20日低位区）· 今天同时出现机会信号（OBV底背离）和风险信号（双顶），先复核结构，不要把看不清当机会。</li>
+<li><strong>安克转债(123257)</strong> | 低位（20日低位区）· 今天同时出现机会信号（OBV底背离）和风险信号（三只乌鸦），先复核结构，不要把看不清当机会。</li>
+</ul>
+
+<hr />
+
+<p><em>由投小研助手自动生成 · 2026-08-20</em></p>
+</article>
+<nav class="daylist">
+<h2>往 期</h2>
+<ul><li><a class="latest" href="archive/2026-09-24.html">09-24</a></li><li><a href="archive/2026-09-22.html">09-22</a></li><li><a href="archive/2026-09-19.html">09-19</a></li><li><a href="archive/2026-09-18.html">09-18</a></li><li><a href="archive/2026-09-17.html">09-17</a></li><li><a href="archive/2026-09-16.html">09-16</a></li><li><a href="archive/2026-09-15.html">09-15</a></li><li><a href="archive/2026-09-14.html">09-14</a></li><li><a href="archive/2026-09-13.html">09-13</a></li><li><a href="archive/2026-09-11.html">09-11</a></li><li><a href="archive/2026-09-10.html">09-10</a></li><li><a href="archive/2026-09-09.html">09-09</a></li><li><a href="archive/2026-09-08.html">09-08</a></li><li><a href="archive/2026-09-07.html">09-07</a></li><li><a href="archive/2026-09-06.html">09-06</a></li><li><a href="archive/2026-09-04.html">09-04</a></li><li><a href="archive/2026-09-03.html">09-03</a></li><li><a href="archive/2026-09-02.html">09-02</a></li><li><a href="archive/2026-09-01.html">09-01</a></li><li><a href="archive/2026-08-31.html">08-31</a></li><li><a href="archive/2026-08-30.html">08-30</a></li><li><a href="archive/2026-08-29.html">08-29</a></li><li><a href="archive/2026-08-28.html">08-28</a></li><li><a href="archive/2026-08-26.html">08-26</a></li><li><a href="archive/2026-08-25.html">08-25</a></li><li><a href="archive/2026-08-24.html">08-24</a></li><li><a href="archive/2026-08-23.html">08-23</a></li><li><a href="archive/2026-08-22.html">08-22</a></li><li><a href="archive/2026-08-21.html">08-21</a></li><li><a href="archive/2026-08-20.html">08-20</a></li><li><a href="archive/2026-08-19.html">08-19</a></li><li><a href="archive/2026-08-18.html">08-18</a></li><li><a href="archive/2026-08-17.html">08-17</a></li><li><a href="archive/2026-08-16.html">08-16</a></li><li><a href="archive/2026-08-15.html">08-15</a></li><li><a href="archive/2026-08-13.html">08-13</a></li><li><a href="archive/2026-08-12.html">08-12</a></li><li><a href="archive/2026-08-11.html">08-11</a></li><li><a href="archive/2026-08-10.html">08-10</a></li><li><a href="archive/2026-08-09.html">08-09</a></li><li><a href="archive/2026-08-07.html">08-07</a></li><li><a href="archive/2026-08-06.html">08-06</a></li><li><a href="archive/2026-08-05.html">08-05</a></li><li><a href="archive/2026-08-03.html">08-03</a></li><li><a href="archive/2026-08-02.html">08-02</a></li><li><a href="archive/2026-07-31.html">07-31</a></li><li><a href="archive/2026-07-30.html">07-30</a></li><li><a href="archive/2026-07-29.html">07-29</a></li><li><a href="archive/2026-07-28.html">07-28</a></li><li><a href="archive/2026-07-27.html">07-27</a></li><li><a href="archive/2026-07-26.html">07-26</a></li><li><a href="archive/2026-07-25.html">07-25</a></li><li><a href="archive/2026-07-23.html">07-23</a></li><li><a href="archive/2026-07-22.html">07-22</a></li><li><a href="archive/2026-07-21.html">07-21</a></li><li><a href="archive/2026-07-20.html">07-20</a></li><li><a href="archive/2026-07-19.html">07-19</a></li><li><a href="archive/2026-07-18.html">07-18</a></li><li><a href="archive/2026-07-17.html">07-17</a></li><li><a href="archive/2026-07-16.html">07-16</a></li></ul>
+</nav>
+
+</main>
+<footer>由投小研流水线自动生成 · 不构成投资建议</footer>
+</div>
+</body>
+</html>
