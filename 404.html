@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>投小研</title>
+<script>
+  // GitHub Pages 无服务器路由：未知路径统一送入 /app/ 由前端路由接管
+  // 2026-08-30 修深链 bug：pathname 剥掉 /txy-site/ 后若已以 app/ 开头，
+  // 不得再拼一次 /app/（旧逻辑会把 /app/dashboard 变成 /app/app/dashboard）
+  (function (l) {
+    var path = l.pathname.replace(/^\/txy-site\/?/, '');
+    if (path.indexOf('app/') !== 0) path = 'app/' + path;
+    l.replace('/txy-site/app/?p=' + encodeURIComponent('/' + path + l.search + l.hash));
+  })(window.location);
+</script>
+</head>
+<body></body>
+</html>
